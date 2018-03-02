@@ -1,0 +1,31 @@
+/*
+Version: 3.4.3 Timestamp: Tue Sep 17 06:47:14 PDT 2013
+*/
+
+.icon-color-red {
+    color: red; 
+}
+
+.icon-color-mustard {
+    color: #DC8600;
+}
+
+.icon-color-gray{
+    color: #34383c !important;
+}
+
+
+.bg-green{
+    background: #C2E9C3 !important;
+}
+.bg-mustard{
+    background: #FFDDA9 !important;
+}
+.bg-red{
+    background: #FCBCB3 !important;
+}
+
+.space-1{
+    margin-top: 6px !important;
+    display: inline-block !important; 
+}
