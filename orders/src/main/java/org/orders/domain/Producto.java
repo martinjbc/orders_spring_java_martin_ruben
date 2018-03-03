@@ -47,7 +47,7 @@ public class Producto {
 	@NotNull(message="Precio Unidad")
 	@NumberFormat(style = Style.NUMBER)
 	@DecimalMin(value = "1.0", inclusive = true,message="El stock debe ser como mínimo 1.0")
-	@DecimalMax(value = "99.9", inclusive = true,message="El stock debe ser como máximo 99.9")
+	@DecimalMax(value = "1999.9", inclusive = true,message="El stock debe ser como máximo 1999.9")
 	@Column(name="preciounidad")
      private double precio;
 	
