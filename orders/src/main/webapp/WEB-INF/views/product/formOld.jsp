@@ -65,7 +65,7 @@
 								<div class="form-group">
 									
 								    <label for="name">Proveedores:</label>
-								    <form:select class="form-control" path="proveedores" name="producto.proveedores.idproveedor">
+								    <form:select class="form-control" path="proveedores" name="proveedores.idproveedor">
 										<form:options items="${proveedores}" itemLabel="nombrecompania" itemValue="idproveedor"/>							    
 								    </form:select>
 								    <font color="red"> <form:errors path="proveedores"></form:errors></font>
