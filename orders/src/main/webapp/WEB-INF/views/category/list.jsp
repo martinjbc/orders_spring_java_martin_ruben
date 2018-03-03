@@ -8,7 +8,7 @@
 	<%@ include file="../partials/resource.jsp" %>   
 	<script>
 		function fn_product_delete(id){
-			if(confirm("Desea Eliminar el producto "+id)==true){
+			if(confirm("Desea Eliminar la categoria "+id)==true){
 		        $.ajax({
 		            url: './delete/'+id,
 		            type: 'get',
@@ -50,9 +50,9 @@
 
 						<div class="box box-primary">
 						    <div class="box-header with-border">
-						        <h3 class="box-title">Productos</h3>
+						        <h3 class="box-title">Listado de Categorias</h3>
 				                <div class="pull-right box-tools">
-				                    <a href="<c:url value='/productos/new'/>" class="btn btn-primary btn-sm" data-toggle="tooltip" title="" data-original-title="Nuevo Producto">
+				                    <a href="<c:url value='/categorias/new'/>" class="btn btn-primary btn-sm" data-toggle="tooltip" title="" data-original-title="Nueva Categoria">
 				                        <i class="fa fa-plus"></i>
 				                    </a>
 				                </div>
@@ -62,12 +62,9 @@
 					                    <table id="editTable" class="table table-striped table-bordered table-hover dataTables-example" >
 					                    <thead>
 					                    <tr>
-					                        <th>Id Producto</th>
-					                        <th>Nombre Producto</th>
-					                        <th>Categorias</th>
-					                        <th>Proveedores</th>
-					                        <th>Precio</th>
-					                        <th>Stock</th>
+					                        <th>Id Categoria</th>
+					                        <th>Nombre Categoria</th>
+					                        <th>Descripción</th>
 					                        <th></th>
 					                    </tr>
 					                    </thead>
@@ -79,23 +76,18 @@
 						                        <th></th>
 						                        <th></th>
 						                        <th></th>
-						                        <th></th>
-						                        <th></th>
 						                    </tr>
 						                    </c:when>				        
 									        <c:otherwise>
 									        	<c:forEach items="${lista}" var="lista">	                    
 								                    <tr class="gradeX">
-								                        <td>${lista.idProducto}</td>
-								                        <td class="center">${lista.nombreproducto}</td>
-								                        <td class="center">${lista.categorias.nombrecategoria}</td>
-								                        <td class="center">${lista.proveedores.nombrecompania}</td>
-								                        <td class="center">${lista.precio}</td>
-								                        <td class="center">${lista.stock}</td>
+								                        <td>${lista.idcategoria}</td>
+								                        <td class="center">${lista.nombrecategoria}</td>
+								                        <td class="center">${lista.descripcion}</td>
 								                        <td class="center">
-								                        	<a href="<c:url value="/productos/edit/${lista.idProducto}"/>"><i class="fa fa-search"  title="Ver Detalle"/></a>
+								                        	<a href="<c:url value="/categorias/edit/${lista.idcategoria}"/>"><i class="fa fa-search"  title="Ver Detalle"/></a>
 								                        	&nbsp;
-								                        	<a href="javascript:void(0)" onclick="fn_product_delete(${lista.idProducto})"><i class="fa fa-minus-circle" title="Eliminar"/></a>
+								                        	<a href="javascript:void(0)" onclick="fn_product_delete(${lista.idcategoria})"><i class="fa fa-minus-circle" title="Eliminar"/></a>
 								                        </td>
 								                    </tr>
 							                    </c:forEach>
