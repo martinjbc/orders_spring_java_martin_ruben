@@ -37,10 +37,10 @@
 			
 			
 							   
-							   <form:form action="${actionurl}" method="post" modelAttribute="pedido">
+							   <form:form action="${actionurl}" method="post" modelAttribute="producto">
 							   	  <!--  modelAttribute="project"  -->
 								<div class="form-group">
-									<form:input path="idproducto" type="hidden"/>
+									<form:input path="idProducto" type="hidden"/>
 								    <label for="name">Nombre Producto</label>
 								    <form:textarea class="form-control" path="nombreproducto" name="nombreproducto"/>
 								    <font color="red"> <form:errors path="nombreproducto"></form:errors></font>
@@ -50,6 +50,25 @@
 								    <label for="name">Precio</label>
 								    <form:textarea class="form-control" path="precio" name="precio"/>
 								    <font color="red"> <form:errors path="precio"></form:errors></font>		                        								    
+								</div>
+								
+								
+								<div class="form-group">
+									
+								    <label for="name">Categorias</label>
+								    <form:select class="form-control" path="categorias" name="categorias.idcategoria">
+										<form:options items="${categorias}" itemLabel="nombrecategoria" itemValue="idcategoria"/>							    
+								    </form:select>
+								    <font color="red"> <form:errors path="categorias"></form:errors></font>
+								</div>
+								
+								<div class="form-group">
+									
+								    <label for="name">Proveedores:</label>
+								    <form:select class="form-control" path="proveedores" name="producto.proveedores.idproveedor">
+										<form:options items="${proveedores}" itemLabel="nombrecompania" itemValue="idproveedor"/>							    
+								    </form:select>
+								    <font color="red"> <form:errors path="proveedores"></form:errors></font>
 								</div>
 								
 								<div class="form-group">
@@ -86,7 +105,10 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+		$('#categorias').select2();
 		var oTable = $('#editTable').DataTable();
+		
+		
 	});
 </script>				
 	    	       

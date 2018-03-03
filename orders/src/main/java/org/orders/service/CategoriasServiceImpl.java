@@ -4,14 +4,13 @@ import java.util.List;
 
 import org.orders.base.GenericServiceImpl;
 import org.orders.dao.CategoriasDao;
-import org.orders.entity.Categorias;
+import org.orders.domain.Categorias;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service("CategoriasService")
-public class CategoriasServiceImpl extends GenericServiceImpl<Categorias, Integer, CategoriasDao>
-implements CategoriasService {
+public class CategoriasServiceImpl extends GenericServiceImpl<Categorias, Integer, CategoriasDao> implements CategoriasService {
 	
 	@Override
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)

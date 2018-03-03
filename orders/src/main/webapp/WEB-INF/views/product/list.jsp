@@ -5,7 +5,31 @@
 <html>
  
 <head>
-	<%@ include file="../partials/resource.jsp" %>    
+	<%@ include file="../partials/resource.jsp" %>   
+	<script>
+		function fn_product_delete(id){
+			if(confirm("Desea Eliminar el producto "+id)==true){
+		        $.ajax({
+		            url: './delete/'+id,
+		            type: 'get',
+		            data: null,
+		            success: function (data) {
+		            	
+		                alert(data.mensaje);
+		                if(data.OK==1)
+		                {
+		                	location.reload();	
+		                }
+		                
+		            },
+		            error: function (err) {
+		                alert("Error: " + err.responseText);
+		            }
+		        });
+			}
+
+		}
+	</script> 
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini">
 	<div class="wrapper">
@@ -40,6 +64,8 @@
 					                    <tr>
 					                        <th>Id Producto</th>
 					                        <th>Nombre Producto</th>
+					                        <th>Categorias</th>
+					                        <th>Proveedores</th>
 					                        <th>Precio</th>
 					                        <th>Stock</th>
 					                        <th></th>
@@ -62,11 +88,14 @@
 								                    <tr class="gradeX">
 								                        <td>${lista.idProducto}</td>
 								                        <td class="center">${lista.nombreproducto}</td>
+								                        <td class="center">${lista.categorias.nombrecategoria}</td>
+								                        <td class="center">${lista.proveedores.nombrecompania}</td>
 								                        <td class="center">${lista.precio}</td>
 								                        <td class="center">${lista.stock}</td>
 								                        <td class="center">
-								                        	<a href="<c:url value="/productos/edit/id/${lista.idProducto}"/>"><i class="ion-search" alt="Ver Detalle" title="Ver Detalle"/>
-								                        	<a href="javascript:void(0)" onclick="fn_product_delete(${lista.idProducto})"><i class="ion-android-delete" alt="Eliminar" title="Eliminar"/>
+								                        	<a href="<c:url value="/productos/edit/${lista.idProducto}"/>"><i class="ion-search" alt="Ver Detalle" title="Ver Detalle"/></a>
+								                        	&nbsp;
+								                        	<a href="javascript:void(0)" onclick="fn_product_delete(${lista.idProducto})"><i class="ion-android-delete" alt="Eliminar" title="Eliminar"/></a>
 								                        </td>
 								                    </tr>
 							                    </c:forEach>
@@ -91,8 +120,9 @@
 	
   <script>
         $(document).ready(function() {
-
+			
             var oTable = $('#editTable').DataTable();
+            
        });
 </script>		       
 </body>

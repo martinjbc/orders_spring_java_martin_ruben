@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.orders.base.GenericDaoImpl;
-import org.orders.entity.Categorias;
+import org.orders.domain.Categorias;
 import org.springframework.stereotype.Repository;
 
 @Repository("CategoriasDao")
