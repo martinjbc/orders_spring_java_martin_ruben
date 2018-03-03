@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class CategoriasController {
 	
 	 public static final String viewPath = "category";
+	 public static final String viewController = "categorias";
 
 	@Autowired
 	@Qualifier("CategoriasService")
@@ -47,7 +48,7 @@ public class CategoriasController {
 		
 		if (!result.hasErrors()) {
 			this.categoriasService.add(categorias);
-			return "redirect:/"+viewPath+"/list";
+			return "redirect:../"+viewController+"/list";	
 			
 		}else {
 			return viewPath+"/formOld";
@@ -76,7 +77,7 @@ public class CategoriasController {
 		model.addAttribute("actionurl", "../update");
 		if (!result.hasErrors()) {
 			this.categoriasService.update(categorias);
-			return "redirect:/"+viewPath+"/list";		
+			return "redirect:../"+viewController+"/list";		
 		}
 		
 		return viewPath+"/formOld";
