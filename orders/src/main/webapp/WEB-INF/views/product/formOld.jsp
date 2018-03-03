@@ -55,8 +55,8 @@
 								
 								<div class="form-group">
 									
-								    <label for="name">Categorias</label>
-								    <form:select class="form-control" path="categorias" name="categorias.idcategoria">
+								    <label for="name">Categorias:${producto.categorias.idcategoria}</label>
+								    <form:select class="form-control" path="categorias.idcategoria" name="categorias.idcategoria">
 										<form:options items="${categorias}" itemLabel="nombrecategoria" itemValue="idcategoria"/>							    
 								    </form:select>
 								    <font color="red"> <form:errors path="categorias"></form:errors></font>
@@ -64,8 +64,8 @@
 								
 								<div class="form-group">
 									
-								    <label for="name">Proveedores:</label>
-								    <form:select class="form-control" path="proveedores" name="proveedores.idproveedor">
+								    <label for="name">Proveedores:${producto.proveedores.idproveedor}</label>
+								    <form:select class="form-control" path="proveedores.idproveedor" name="proveedores.idproveedor">
 										<form:options items="${proveedores}" itemLabel="nombrecompania" itemValue="idproveedor"/>							    
 								    </form:select>
 								    <font color="red"> <form:errors path="proveedores"></form:errors></font>
