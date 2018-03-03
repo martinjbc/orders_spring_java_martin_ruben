@@ -1,0 +1,23 @@
+subiendo con git configurado
+
+
+
+Si utilizas un servidor remoto, ejecuta
+git clone username@host:/path/to/repository
+
+
+
+
+
+$ git config credential.helper store
+$ git push https://github.com/repo.git
+
+Username for 'https://github.com': <USERNAME>
+Password for 'https://USERNAME@github.com': <PASSWORD>
+
+
+
+
+git add .
+git commit -m "Commit message"
+git push origin master
