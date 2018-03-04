@@ -12,8 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.IndexColumn;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Table(name="CATEGORIAS")  
 @Entity
@@ -25,9 +26,13 @@ public class Categorias {
 	private int Idcategoria;
 	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "categorias_seq")
 	
+	@NotBlank(message="Nombre Categoria Obligatorio")
+	@Size(min = 3, max = 15,message="Debe contener de 3 a 15 caracteres")
 	@Column(name="Nombrecategoria")
 	private String Nombrecategoria;
 	
+	@NotBlank(message="Descripción Obligatorio")
+	@Size(min = 5, max = 250,message="Debe contener de 5 a 250 caracteres")
 	@Column(name="Descripcion")
 	private String Descripcion;
 	

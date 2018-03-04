@@ -26,7 +26,7 @@
 
 					<div class="box box-primary">
 					    <div class="box-header with-border">
-					        <h3 class="box-title">Nueva Categoria</h3>
+					        <h3 class="box-title">${categorias.idcategoria==null ? "Nueva" : "Actuazalizacion de"} Categoria</h3>
 					        <div class="box-tools pull-right">
 					            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 					            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
@@ -42,14 +42,14 @@
 								<div class="form-group">
 									<form:input path="idcategoria" type="hidden"/>
 								    <label for="name">Nombre categoria</label>
-								    <form:input type="text" maxlength="10" class="form-control" path="nombrecategoria" name="nombrecategoria"/>
-								    <font color="red"> <form:errors path="nombrecategoria"></form:errors></font>
+								    <form:input type="text" maxlength="20" class="form-control" path="nombrecategoria" name="nombrecategoria"/>
+								    <font color="red"> <form:errors path="Nombrecategoria"></form:errors></font>
 								</div>
 				                		
 								<div class="form-group">
-								    <label for="name">Descricion</label>
-								    <form:input type="text" maxlength="15" class="form-control" path="descripcion" name="descripcion"/>
-								    <font color="red"> <form:errors path="descripcion"></form:errors></font>		                        								    
+								    <label for="name">Descripcion</label>
+								    <form:input type="text" class="form-control" path="descripcion" name="descripcion"/>
+								    <font color="red"> <form:errors path="Descripcion"></form:errors></font>		                        								    
 								</div>
 								
 							    <div class="box-footer">
